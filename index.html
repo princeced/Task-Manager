@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Task Management</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div>
+        <label>Add task</label>
+        <input type="text" id="inp_task" placeholder="enter the task">
+        <button id="submit_btn" onclick="click12()">Add</button>
+    </div>
+    <div>
+        <h2>Todo</h2>
+        <div id="main3h">
+            <!--<ul id="ulid">
+                 <li><input type="checkbox">
+                    <span style="border: 1px solid black;">fgggf</span>
+                    <input type="text"><button>Edit</button><button>Delete</button>
+                </li> 
+            </ul>-->
+        </div>
+    </div>
+    <div>
+        <h2>Completed Tasks</h2>
+    </div>
+
+    <script>
+        /**  $(document).ready(function() {
+                                            $("#submit_btn").click(function() {});
+                                        });
+
+                                        function click12() {
+                                            let adtasks = $("#inp_task").val();
+
+
+                                            let list = $("li").attr({
+                                                class: "listItems",
+                                            });
+                                            let checkboxs = $("input").attr({
+                                                type: "checkbox",
+                                                id: "inputCheck",
+
+                                            });
+                                            let spany = $('<span />').text(adtasks);
+                                            let labels = $("label").attr({
+                                                id: "inputLabel",
+
+                                            });
+
+                                            let editInput = $("input").attr({
+                                                type: "text",
+                                                id: "editTextbox"
+                                            });
+
+                                            let editButton = $("button").attr({
+                                                id: "editButton",
+                                                onclick: editThis(this),
+                                                value: "Edit",
+                                            });
+                                            let deleteButton = $("button").attr({
+                                                id: "deletebtn",
+                                                onclick: deleteThis(this),
+                                                Value: "Delete"
+                                            });
+
+
+                                            $("#ulid").append(list, checkboxs, spany, labels, editInput, editButton, deleteButton);
+
+
+                                        }
+
+
+                                        function deleteThis(index) {
+                                            $("ul").remove();
+                                        }
+
+                                        function editThis(index) {
+                                            let inptvalue = $("inputLabel").text();
+                                            $("editTextbox").val = inptvalue;
+                                        }**/
+
+        // $(".reset").click(function() {
+        ////     $(this).closest('form').find("input[type=text], textarea").val("");
+        // });
+
+
+        $(document).ready(function() {
+            $("#submit_btn").click(function() {
+
+            })
+        });
+
+        function click12() {
+            let imp1 = $("#inp_task").val();
+            console.log(imp1);
+            let div1 = $('<div />').attr("class", "divcls");
+            let checkBox = $('<br><input >').attr({
+                type: "checkbox",
+                id: "check12",
+
+            });
+            let pr = $("<span />").attr(
+                "id", "para1"
+            ).text(imp1);
+            let checkImp = $('<input >').attr({
+                type: "text",
+                id: "imp12"
+            });
+            let editbtn = $('<input >').attr({
+                type: "button",
+                id: "imp14",
+                onclick: "edit1()",
+                value: "Edit"
+            });
+            let delBtn = $('<input >').attr({
+                type: "button",
+                id: "del12",
+                onclick: "del1();",
+                value: "Delete"
+            });
+
+            $("#main3h").append(div1, checkBox, pr, checkImp, editbtn, delBtn);
+        }
+    </script>
+</body>
+
+
+</html>
