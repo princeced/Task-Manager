@@ -40,7 +40,7 @@
 
             let taskInput = $("#inp_task").val();
             console.log(taskInput);
-            document.querySelector("#inp_task").val = "";
+            $("#inp_task").val = "";
             let entry = $('<li class="itemList"><input type="checkbox" class="checkBox"> <span class="itemText" > ' + taskInput + '</span> <input type = "text" class = "inputListval" ><button class = "editList" > Edit </button> <button class = "deleteList" > Delete </button></li > ');
 
             $("#ulid").append(entry);
