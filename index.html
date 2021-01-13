@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Task Management</title>
+
+</head>
+
+<body>
+    <div>
+        <label>Add task</label>
+        <input type="text" id="inp_task" placeholder="enter the task">
+        <button id="submit_btn">Add</button>
+    </div>
+    <div>
+        <h2>Todo</h2>
+        <div>
+            <ul id="ulid">
+                <!-- <li><input type="checkbox">
+                    <span ">fgggf</span>
+                    <input type="text"><button>Edit</button><button>Delete</button>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h2>Completed Tasks</h2>
+        <div>
+            <ul id="ulidcomplete">
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $("#submit_btn").on("click", function() {
+
+            let taskInput = $("#inp_task").val();
+            console.log(taskInput);
+            document.querySelector("#inp_task").val = "";
+            let entry = $('<li class="itemList"><input type="checkbox" class="checkBox"> <span class="itemText" > ' + taskInput + '</span> <input type = "text" class = "inputListval" ><button class = "editList" > Edit </button> <button class = "deleteList" > Delete </button></li > ');
+
+            $("#ulid").append(entry);
+
+            $(".checkBox").click(function() {
+                if ($(this).is(":checked")) {
+                    $("#ulidcomplete").append($(this).parent(".itemList"))
+                } else {
+                    $("#ulid").append($(this).parent(".itemList"))
+                }
+            });
+
+            $(".editList").click(function() {
+                if ($(this).parent(".itemList").find(".inputListval").val() == "") {
+                    $(this).prev().val($(this).parent(".itemList").find(".itemText").text());
+                } else {
+                    $(this).parent(".itemList").find(".itemText").text($(this).prev().val());
+                }
+            });
+
+            $(".deleteList").click(function() {
+                $(this).parent('.itemList').remove();
+            });
+        });
+    </script>
+</body>
+
+
+</html>
